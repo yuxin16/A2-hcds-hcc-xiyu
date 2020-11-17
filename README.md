@@ -12,6 +12,8 @@ The data is collected from:
 
 > The data description is from original discription from Jupyter Assignment
 
+3. Terms and Conditions can befound under [Wikimedia's general Term of Use](https://foundation.wikimedia.org/wiki/Terms_of_Use/en) and [Privacy Policy](https://foundation.wikimedia.org/wiki/Privacy_policy)
+
 # Project Structure and Main Steps
 The detailed data processing and visualization process can be found in Jupyter Notebook named A2_ReproducibilityWorkflow.
 
@@ -38,18 +40,20 @@ The processed data is stored in a csv file with 8 attributes:
 <br/> In which year were the scored user traffics taken place. Extracted from timestamp parameter from original data in JSON file.
 * month:
 <br/> In which month were the scored user traffics taken place. Extracted from timestamp parameter from original data in JSON file.
-* pagecount_all_views: <br/> Pagecount traffics in all, including from desktop as well as from mobile.Accessed through pagecount API.
-* pagecount_desktop_views: <br/> Pagecount traffics from desktop as access-type.
-* pagecount_mobile_views: <br/> Pagecount traffics from mobile as access-type.
-* pageview_all_views: <br/> Pageview traffics in all, including from desktop as well as from mobile.Accessed through pageview API.
-* pageview_desktop_views: <br/> Pageview traffics from desktop as access-type.
-* pageview_mobile_views: <br/> Pageview traffics from mobile as access-type, including from mobile-web as well as from mobile-app (preprocessed before).
+* pagecount_all_views: <br/> Pagecount traffics in all, including from desktop as well as from mobile.Accessed through pagecount API. May include scrawlers/spiders.
+* pagecount_desktop_views: <br/> Pagecount traffics from desktop as access-type. May include scrawlers/spiders.
+* pagecount_mobile_views: <br/> Pagecount traffics from mobile as access-type. May include scrawlers/spiders.
+* pageview_all_views: <br/> Pageview traffics in all, including from desktop as well as from mobile.Accessed through pageview API. Exclude from scrawlers/spiders.
+* pageview_desktop_views: <br/> Pageview traffics from desktop as access-type. Exclude from scrawlers/spiders.
+* pageview_mobile_views: <br/> Pageview traffics from mobile as access-type, including from mobile-web as well as from mobile-app (preprocessed before). Exclude from scrawlers/spiders.
 
 ## Data Analysis and Visualization
 
 In this stage, a time series plot of user traffics from different access type are depicted as line chart.
 
 We are interested in three metrics: desktop traffic, mobile traffic and all traffic, regardless of APIs. Therefore, the csv file is loaded as dataframe and data processing for metrics and scaling (Y-axis in billion) are taken place before the visualization.
+
+<br/>![image](https://github.com/FUB-HCC/hcds-winter-2020/blob/main/assignments/A2_ReproducibilityWorkflow/xiyu/Page%20Views%20on%20English%20Wikipedia.png)
 
 
 
